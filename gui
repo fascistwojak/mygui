@@ -1,0 +1,288 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local GUI = Instance.new("ScreenGui")
+local LoginFrame = Instance.new("Frame")
+local bar1 = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Username = Instance.new("TextBox")
+local Password = Instance.new("TextBox")
+local Submit = Instance.new("TextButton")
+local MainGUI = Instance.new("Frame")
+local credits = Instance.new("TextLabel")
+local exit = Instance.new("TextButton")
+local executer = Instance.new("TextButton")
+local scripts = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local ScriptsTab = Instance.new("Frame")
+local Title_2 = Instance.new("TextLabel")
+local FashDestroyer = Instance.new("TextButton")
+local unnamed = Instance.new("TextButton")
+local unnamed_2 = Instance.new("TextButton")
+local unnamed_3 = Instance.new("TextButton")
+local exit_2 = Instance.new("TextButton")
+
+--Properties:
+
+GUI.Name = "GUI"
+GUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+LoginFrame.Name = "LoginFrame"
+LoginFrame.Parent = GUI
+LoginFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+LoginFrame.BorderSizePixel = 0
+LoginFrame.Position = UDim2.new(0.168148786, 0, 0.188963205, 0)
+LoginFrame.Size = UDim2.new(0, 239, 0, 353)
+LoginFrame.Style = Enum.FrameStyle.RobloxSquare
+
+bar1.Name = "bar1"
+bar1.Parent = LoginFrame
+bar1.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+bar1.BorderSizePixel = 0
+bar1.Position = UDim2.new(-0.0313743688, 0, -0.0244685281, 0)
+bar1.Size = UDim2.new(0, 237, 0, 36)
+bar1.Style = Enum.FrameStyle.RobloxSquare
+
+Title.Name = "Title"
+Title.Parent = LoginFrame
+Title.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(-0.0283380598, 0, -0.0231722761, 0)
+Title.Size = UDim2.new(0, 237, 0, 42)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Login"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+Username.Name = "Username"
+Username.Parent = LoginFrame
+Username.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Username.BorderColor3 = Color3.fromRGB(10, 10, 10)
+Username.Position = UDim2.new(-0.0292740166, 0, 0.152200669, 0)
+Username.Size = UDim2.new(0, 237, 0, 50)
+Username.Font = Enum.Font.SourceSans
+Username.Text = "Username"
+Username.TextColor3 = Color3.fromRGB(0, 0, 0)
+Username.TextScaled = true
+Username.TextSize = 14.000
+Username.TextWrapped = true
+Username.TextXAlignment = Enum.TextXAlignment.Left
+
+Password.Name = "Password"
+Password.Parent = LoginFrame
+Password.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Password.BorderColor3 = Color3.fromRGB(10, 10, 10)
+Password.Position = UDim2.new(-0.0334728025, 0, 0.373632282, 0)
+Password.Size = UDim2.new(0, 236, 0, 50)
+Password.Font = Enum.Font.SourceSans
+Password.Text = "Password"
+Password.TextColor3 = Color3.fromRGB(0, 0, 0)
+Password.TextScaled = true
+Password.TextSize = 14.000
+Password.TextWrapped = true
+Password.TextXAlignment = Enum.TextXAlignment.Left
+
+Submit.Name = "Submit"
+Submit.Parent = LoginFrame
+Submit.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Submit.BorderColor3 = Color3.fromRGB(10, 10, 10)
+Submit.Position = UDim2.new(0.0502092056, 0, 0.719546735, 0)
+Submit.Size = UDim2.new(0, 200, 0, 50)
+Submit.Font = Enum.Font.SourceSans
+Submit.Text = "Submit"
+Submit.TextColor3 = Color3.fromRGB(0, 0, 0)
+Submit.TextScaled = true
+Submit.TextSize = 14.000
+Submit.TextWrapped = true
+
+MainGUI.Name = "MainGUI"
+MainGUI.Parent = GUI
+MainGUI.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainGUI.BorderSizePixel = 2
+MainGUI.Position = UDim2.new(0.475343555, 0, 0.187290967, 0)
+MainGUI.Size = UDim2.new(0, 394, 0, 342)
+MainGUI.Visible = false
+
+credits.Name = "credits"
+credits.Parent = MainGUI
+credits.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+credits.BorderColor3 = Color3.fromRGB(10, 10, 10)
+credits.Position = UDim2.new(-0.00253807101, 0, -0.00292397663, 0)
+credits.Size = UDim2.new(0, 394, 0, 50)
+credits.Font = Enum.Font.SourceSans
+credits.Text = "FashGUI"
+credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+credits.TextScaled = true
+credits.TextSize = 14.000
+credits.TextWrapped = true
+
+exit.Name = "exit"
+exit.Parent = MainGUI
+exit.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+exit.BorderColor3 = Color3.fromRGB(10, 10, 10)
+exit.LayoutOrder = 1
+exit.Position = UDim2.new(0.868020296, 0, -0.00292397663, 0)
+exit.Size = UDim2.new(0, 52, 0, 50)
+exit.Font = Enum.Font.SourceSans
+exit.Text = "X"
+exit.TextColor3 = Color3.fromRGB(255, 255, 255)
+exit.TextScaled = true
+exit.TextSize = 14.000
+exit.TextWrapped = true
+
+executer.Name = "executer"
+executer.Parent = MainGUI
+executer.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+executer.BorderColor3 = Color3.fromRGB(15, 15, 15)
+executer.Position = UDim2.new(0.230964467, 0, 0.342105269, 0)
+executer.Size = UDim2.new(0, 211, 0, 50)
+executer.Font = Enum.Font.SourceSans
+executer.Text = "Executor"
+executer.TextColor3 = Color3.fromRGB(255, 255, 255)
+executer.TextScaled = true
+executer.TextSize = 14.000
+executer.TextWrapped = true
+
+scripts.Name = "scripts"
+scripts.Parent = MainGUI
+scripts.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+scripts.BorderColor3 = Color3.fromRGB(15, 15, 15)
+scripts.Position = UDim2.new(0.230964467, 0, 0.625730991, 0)
+scripts.Size = UDim2.new(0, 211, 0, 50)
+scripts.Font = Enum.Font.SourceSans
+scripts.Text = "Scripts"
+scripts.TextColor3 = Color3.fromRGB(255, 255, 255)
+scripts.TextScaled = true
+scripts.TextSize = 14.000
+scripts.TextWrapped = true
+
+TextLabel.Parent = MainGUI
+TextLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+TextLabel.Position = UDim2.new(0, 0, 0.953216374, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 16)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Made by Purchase#1999"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+ScriptsTab.Name = "ScriptsTab"
+ScriptsTab.Parent = GUI
+ScriptsTab.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ScriptsTab.BorderColor3 = Color3.fromRGB(27, 42, 53)
+ScriptsTab.Position = UDim2.new(0.572352469, 0, 0.165551841, 0)
+ScriptsTab.Size = UDim2.new(0, 400, 0, 374)
+ScriptsTab.Visible = false
+
+Title_2.Name = "Title"
+Title_2.Parent = ScriptsTab
+Title_2.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Title_2.BorderColor3 = Color3.fromRGB(10, 10, 10)
+Title_2.Size = UDim2.new(0, 400, 0, 50)
+Title_2.Font = Enum.Font.SourceSans
+Title_2.Text = "Scripts"
+Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.TextScaled = true
+Title_2.TextSize = 14.000
+Title_2.TextWrapped = true
+
+FashDestroyer.Name = "FashDestroyer"
+FashDestroyer.Parent = ScriptsTab
+FashDestroyer.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+FashDestroyer.BorderColor3 = Color3.fromRGB(27, 42, 53)
+FashDestroyer.Position = UDim2.new(0.25, 0, 0.232620314, 0)
+FashDestroyer.Size = UDim2.new(0, 200, 0, 50)
+FashDestroyer.Font = Enum.Font.SourceSans
+FashDestroyer.Text = "FashDestroyer"
+FashDestroyer.TextColor3 = Color3.fromRGB(255, 255, 255)
+FashDestroyer.TextScaled = true
+FashDestroyer.TextSize = 14.000
+FashDestroyer.TextWrapped = true
+
+unnamed.Name = "unnamed"
+unnamed.Parent = ScriptsTab
+unnamed.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+unnamed.BorderColor3 = Color3.fromRGB(27, 42, 53)
+unnamed.Position = UDim2.new(0.25, 0, 0.414438486, 0)
+unnamed.Size = UDim2.new(0, 200, 0, 50)
+unnamed.Font = Enum.Font.SourceSans
+unnamed.Text = "Script"
+unnamed.TextColor3 = Color3.fromRGB(255, 255, 255)
+unnamed.TextScaled = true
+unnamed.TextSize = 14.000
+unnamed.TextWrapped = true
+
+unnamed_2.Name = "unnamed"
+unnamed_2.Parent = ScriptsTab
+unnamed_2.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+unnamed_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+unnamed_2.Position = UDim2.new(0.25, 0, 0.606951892, 0)
+unnamed_2.Size = UDim2.new(0, 200, 0, 50)
+unnamed_2.Font = Enum.Font.SourceSans
+unnamed_2.Text = "Script"
+unnamed_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+unnamed_2.TextScaled = true
+unnamed_2.TextSize = 14.000
+unnamed_2.TextWrapped = true
+
+unnamed_3.Name = "unnamed"
+unnamed_3.Parent = ScriptsTab
+unnamed_3.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+unnamed_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
+unnamed_3.Position = UDim2.new(0.25, 0, 0.79411763, 0)
+unnamed_3.Size = UDim2.new(0, 200, 0, 50)
+unnamed_3.Font = Enum.Font.SourceSans
+unnamed_3.Text = "Script"
+unnamed_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+unnamed_3.TextScaled = true
+unnamed_3.TextSize = 14.000
+unnamed_3.TextWrapped = true
+
+exit_2.Name = "exit"
+exit_2.Parent = ScriptsTab
+exit_2.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+exit_2.BorderColor3 = Color3.fromRGB(10, 10, 10)
+exit_2.LayoutOrder = 1
+exit_2.Position = UDim2.new(0.868020296, 0, -0.000250179786, 0)
+exit_2.Size = UDim2.new(0, 52, 0, 50)
+exit_2.Font = Enum.Font.SourceSans
+exit_2.Text = "X"
+exit_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+exit_2.TextScaled = true
+exit_2.TextSize = 14.000
+exit_2.TextWrapped = true
+
+-- Scripts:
+
+local function LIQAH_fake_script() -- LoginFrame.Draggable 
+	local script = Instance.new('Script', LoginFrame)
+
+	local frame = script.Parent.Parent.LoginFrame
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+end
+coroutine.wrap(LIQAH_fake_script)()
+local function TCWST_fake_script() -- MainGUI.Draggable 
+	local script = Instance.new('Script', MainGUI)
+
+	local frame = script.Parent.Parent.MainGUI
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+end
+coroutine.wrap(TCWST_fake_script)()
+local function OOHO_fake_script() -- ScriptsTab.Draggable 
+	local script = Instance.new('Script', ScriptsTab)
+
+	local frame = script.Parent.Parent.ScriptsTab
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
+end
+coroutine.wrap(OOHO_fake_script)()
