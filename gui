@@ -323,6 +323,7 @@ No.TextSize = 14.000
 No.TextWrapped = true
 No.MouseButton1Down:connect(function()
 ExitConfirm.Visible = false
+MainGUI.Visible = true
 end)
 
 Hide.Name = "Hide"
