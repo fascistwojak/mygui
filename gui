@@ -1,5 +1,8 @@
--- Gui to Lua
--- Version: 3.2
+--[[
+BUTTONNAME.MouseButton1Down:connect(function()
+script
+end)
+--]]
 
 -- Instances:
 
@@ -27,7 +30,7 @@ local exit_2 = Instance.new("TextButton")
 --Properties:
 
 GUI.Name = "GUI"
-GUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+GUI.Parent = game.CoreGui
 
 LoginFrame.Name = "LoginFrame"
 LoginFrame.Parent = GUI
@@ -98,6 +101,12 @@ Submit.TextColor3 = Color3.fromRGB(0, 0, 0)
 Submit.TextScaled = true
 Submit.TextSize = 14.000
 Submit.TextWrapped = true
+
+Submit.MouseButton1Down:connect(function()
+LoginFrame.Visible = false
+MainGUI.Visible = true
+--login script will be later
+end)
 
 MainGUI.Name = "MainGUI"
 MainGUI.Parent = GUI
