@@ -1,3 +1,11 @@
+--[[
+BUTTONNAME.MouseButton1Down:connect(function()
+script
+end)
+--]]
+
+-- Instances:
+
 local GUI = Instance.new("ScreenGui")
 local LoginFrame = Instance.new("Frame")
 local bar1 = Instance.new("Frame")
@@ -23,6 +31,8 @@ local Title_3 = Instance.new("TextLabel")
 local Yes = Instance.new("TextButton")
 local No = Instance.new("TextButton")
 local Hide = Instance.new("TextButton")
+local Open = Instance.new("Frame")
+local openbutton = Instance.new("TextButton")
 
 --Properties:
 
@@ -33,7 +43,7 @@ LoginFrame.Name = "LoginFrame"
 LoginFrame.Parent = GUI
 LoginFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 LoginFrame.BorderSizePixel = 0
-LoginFrame.Position = UDim2.new(0.168148786, 0, 0.188963205, 0)
+LoginFrame.Position = UDim2.new(0.402586937, 0, 0.204013377, 0)
 LoginFrame.Size = UDim2.new(0, 239, 0, 353)
 LoginFrame.Style = Enum.FrameStyle.RobloxSquare
 
@@ -99,8 +109,8 @@ Submit.TextScaled = true
 Submit.TextSize = 14.000
 Submit.TextWrapped = true
 Submit.MouseButton1Down:connect(function()
-LoginFrame.Visible = false
 MainGUI.Visible = true
+LoginFrame.Visible = false
 end)
 
 MainGUI.Name = "MainGUI"
@@ -305,6 +315,8 @@ Yes.TextSize = 14.000
 Yes.TextWrapped = true
 Yes.MouseButton1Down:connect(function()
 MainGUI.Visible = false
+Open.Visible = false
+ScriptsTab.Visible = false
 ExitConfirm.Visible = false
 end)
 
@@ -320,8 +332,8 @@ No.TextScaled = true
 No.TextSize = 14.000
 No.TextWrapped = true
 No.MouseButton1Down:connect(function()
-ExitConfirm.Visible = false
 MainGUI.Visible = true
+ExitConfirm.Visible = false
 end)
 
 Hide.Name = "Hide"
@@ -330,15 +342,41 @@ Hide.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 Hide.Position = UDim2.new(0.267441869, 0, 0.752545655, 0)
 Hide.Size = UDim2.new(0, 200, 0, 50)
 Hide.Font = Enum.Font.SourceSans
-Hide.Text = "Hide (In progress)"
+Hide.Text = "Hide"
 Hide.TextColor3 = Color3.fromRGB(255, 255, 255)
 Hide.TextScaled = true
 Hide.TextSize = 14.000
 Hide.TextWrapped = true
+Hide.MouseButton1Down:connect(function()
+Open.Visible = true
+ExitConfirm.Visible = false
+end)
+
+Open.Name = "Open"
+Open.Parent = GUI
+Open.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Open.Position = UDim2.new(0.864995956, 0, 0.968227327, 0)
+Open.Size = UDim2.new(0, 167, 0, 19)
+Open.Visible = false
+
+openbutton.Name = "open button"
+openbutton.Parent = Open
+openbutton.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+openbutton.Size = UDim2.new(0, 167, 0, 19)
+openbutton.Font = Enum.Font.SourceSans
+openbutton.Text = "Open"
+openbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+openbutton.TextScaled = true
+openbutton.TextSize = 14.000
+openbutton.TextWrapped = true
+openbutton.MouseButton1Down:connect(function()
+MainGUI.Visible = true
+Open.Visible = false
+end)
 
 -- Scripts:
 
-local function FCAUZP_fake_script() -- LoginFrame.Draggable 
+local function VFRDE_fake_script() -- LoginFrame.Draggable 
 	local script = Instance.new('Script', LoginFrame)
 
 	local frame = script.Parent.Parent.LoginFrame
@@ -346,8 +384,8 @@ local function FCAUZP_fake_script() -- LoginFrame.Draggable
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(FCAUZP_fake_script)()
-local function CYUZKUC_fake_script() -- MainGUI.Draggable 
+coroutine.wrap(VFRDE_fake_script)()
+local function JLSUAN_fake_script() -- MainGUI.Draggable 
 	local script = Instance.new('Script', MainGUI)
 
 	local frame = script.Parent.Parent.MainGUI
@@ -355,8 +393,8 @@ local function CYUZKUC_fake_script() -- MainGUI.Draggable
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(CYUZKUC_fake_script)()
-local function KNYPRCJ_fake_script() -- ScriptsTab.Draggable 
+coroutine.wrap(JLSUAN_fake_script)()
+local function NCOGNIU_fake_script() -- ScriptsTab.Draggable 
 	local script = Instance.new('Script', ScriptsTab)
 
 	local frame = script.Parent.Parent.ScriptsTab
@@ -364,4 +402,4 @@ local function KNYPRCJ_fake_script() -- ScriptsTab.Draggable
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(KNYPRCJ_fake_script)()
+coroutine.wrap(NCOGNIU_fake_script)()
