@@ -1,10 +1,3 @@
---[[
-BUTTONNAME.MouseButton1Down:connect(function()
-script
-end)
---]]
-
-
 local GUI = Instance.new("ScreenGui")
 local LoginFrame = Instance.new("Frame")
 local bar1 = Instance.new("Frame")
@@ -174,6 +167,10 @@ scripts.TextColor3 = Color3.fromRGB(255, 255, 255)
 scripts.TextScaled = true
 scripts.TextSize = 14.000
 scripts.TextWrapped = true
+scripts.MouseButton1Down:connect(function()
+MainGUI.Visible = false
+ScriptsTab.Visible = true
+end)
 
 TextLabel.Parent = MainGUI
 TextLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
@@ -308,6 +305,7 @@ Yes.TextSize = 14.000
 Yes.TextWrapped = true
 Yes.MouseButton1Down:connect(function()
 MainGUI.Visible = false
+ExitConfirm.Visible = false
 end)
 
 No.Name = "No"
