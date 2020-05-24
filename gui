@@ -4,13 +4,12 @@ script
 end)
 --]]
 
--- Instances:
 
 local GUI = Instance.new("ScreenGui")
 local LoginFrame = Instance.new("Frame")
 local bar1 = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
-local Username = Instance.new("TextBox")
+local Key = Instance.new("TextBox")
 local Password = Instance.new("TextBox")
 local Submit = Instance.new("TextButton")
 local MainGUI = Instance.new("Frame")
@@ -26,11 +25,16 @@ local unnamed = Instance.new("TextButton")
 local unnamed_2 = Instance.new("TextButton")
 local unnamed_3 = Instance.new("TextButton")
 local exit_2 = Instance.new("TextButton")
+local ExitConfirm = Instance.new("Frame")
+local Title_3 = Instance.new("TextLabel")
+local Yes = Instance.new("TextButton")
+local No = Instance.new("TextButton")
+local Hide = Instance.new("TextButton")
 
 --Properties:
 
 GUI.Name = "GUI"
-GUI.Parent = game.CoreGui
+GUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 LoginFrame.Name = "LoginFrame"
 LoginFrame.Parent = GUI
@@ -61,19 +65,19 @@ Title.TextScaled = true
 Title.TextSize = 14.000
 Title.TextWrapped = true
 
-Username.Name = "Username"
-Username.Parent = LoginFrame
-Username.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-Username.BorderColor3 = Color3.fromRGB(10, 10, 10)
-Username.Position = UDim2.new(-0.0292740166, 0, 0.152200669, 0)
-Username.Size = UDim2.new(0, 237, 0, 50)
-Username.Font = Enum.Font.SourceSans
-Username.Text = "Username"
-Username.TextColor3 = Color3.fromRGB(0, 0, 0)
-Username.TextScaled = true
-Username.TextSize = 14.000
-Username.TextWrapped = true
-Username.TextXAlignment = Enum.TextXAlignment.Left
+Key.Name = "Key"
+Key.Parent = LoginFrame
+Key.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Key.BorderColor3 = Color3.fromRGB(10, 10, 10)
+Key.Position = UDim2.new(-0.0292740166, 0, 0.152200669, 0)
+Key.Size = UDim2.new(0, 237, 0, 50)
+Key.Font = Enum.Font.SourceSans
+Key.Text = "Key"
+Key.TextColor3 = Color3.fromRGB(0, 0, 0)
+Key.TextScaled = true
+Key.TextSize = 14.000
+Key.TextWrapped = true
+Key.TextXAlignment = Enum.TextXAlignment.Left
 
 Password.Name = "Password"
 Password.Parent = LoginFrame
@@ -101,11 +105,9 @@ Submit.TextColor3 = Color3.fromRGB(0, 0, 0)
 Submit.TextScaled = true
 Submit.TextSize = 14.000
 Submit.TextWrapped = true
-
 Submit.MouseButton1Down:connect(function()
 LoginFrame.Visible = false
 MainGUI.Visible = true
---login script will be later
 end)
 
 MainGUI.Name = "MainGUI"
@@ -142,6 +144,10 @@ exit.TextColor3 = Color3.fromRGB(255, 255, 255)
 exit.TextScaled = true
 exit.TextSize = 14.000
 exit.TextWrapped = true
+exit.MouseButton1Down:connect(function()
+MainGUI.Visible = false
+ExitConfirm.Visible = true
+end)
 
 executer.Name = "executer"
 executer.Parent = MainGUI
@@ -150,7 +156,7 @@ executer.BorderColor3 = Color3.fromRGB(15, 15, 15)
 executer.Position = UDim2.new(0.230964467, 0, 0.342105269, 0)
 executer.Size = UDim2.new(0, 211, 0, 50)
 executer.Font = Enum.Font.SourceSans
-executer.Text = "Executor"
+executer.Text = "Executor (WIP)"
 executer.TextColor3 = Color3.fromRGB(255, 255, 255)
 executer.TextScaled = true
 executer.TextSize = 14.000
@@ -168,10 +174,6 @@ scripts.TextColor3 = Color3.fromRGB(255, 255, 255)
 scripts.TextScaled = true
 scripts.TextSize = 14.000
 scripts.TextWrapped = true
-scripts.MouseButton1Down:connect(function()
-MainGUI.Visible = false
-ScriptsTab.Visible = true
-end)
 
 TextLabel.Parent = MainGUI
 TextLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
@@ -216,9 +218,6 @@ FashDestroyer.TextColor3 = Color3.fromRGB(255, 255, 255)
 FashDestroyer.TextScaled = true
 FashDestroyer.TextSize = 14.000
 FashDestroyer.TextWrapped = true
-FashDestroyer.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fascistwojak/cyadminREMAKE/master/Streets%20Admin"),true)()
-end)
 
 unnamed.Name = "unnamed"
 unnamed.Parent = ScriptsTab
@@ -277,9 +276,70 @@ ScriptsTab.Visible = false
 MainGUI.Visible = true
 end)
 
+ExitConfirm.Name = "ExitConfirm"
+ExitConfirm.Parent = GUI
+ExitConfirm.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ExitConfirm.BorderColor3 = Color3.fromRGB(15, 15, 15)
+ExitConfirm.Position = UDim2.new(0.3257882, 0, 0.261357248, 0)
+ExitConfirm.Size = UDim2.new(0, 430, 0, 252)
+ExitConfirm.Visible = false
+
+Title_3.Name = "Title"
+Title_3.Parent = ExitConfirm
+Title_3.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+Title_3.Size = UDim2.new(0, 430, 0, 50)
+Title_3.Font = Enum.Font.SourceSans
+Title_3.Text = "Are you sure?"
+Title_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_3.TextScaled = true
+Title_3.TextSize = 14.000
+Title_3.TextWrapped = true
+
+Yes.Name = "Yes"
+Yes.Parent = ExitConfirm
+Yes.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Yes.Position = UDim2.new(0.267441869, 0, 0.288259953, 0)
+Yes.Size = UDim2.new(0, 200, 0, 50)
+Yes.Font = Enum.Font.SourceSans
+Yes.Text = "Yes"
+Yes.TextColor3 = Color3.fromRGB(255, 255, 255)
+Yes.TextScaled = true
+Yes.TextSize = 14.000
+Yes.TextWrapped = true
+Yes.MouseButton1Down:connect(function()
+MainGUI.Visible = false
+end)
+
+No.Name = "No"
+No.Parent = ExitConfirm
+No.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+No.Position = UDim2.new(0.267441869, 0, 0.526355147, 0)
+No.Size = UDim2.new(0, 200, 0, 50)
+No.Font = Enum.Font.SourceSans
+No.Text = "No"
+No.TextColor3 = Color3.fromRGB(255, 255, 255)
+No.TextScaled = true
+No.TextSize = 14.000
+No.TextWrapped = true
+No.MouseButton1Down:connect(function()
+ExitConfirm.Visible = false
+end)
+
+Hide.Name = "Hide"
+Hide.Parent = ExitConfirm
+Hide.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+Hide.Position = UDim2.new(0.267441869, 0, 0.752545655, 0)
+Hide.Size = UDim2.new(0, 200, 0, 50)
+Hide.Font = Enum.Font.SourceSans
+Hide.Text = "Hide (In progress)"
+Hide.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hide.TextScaled = true
+Hide.TextSize = 14.000
+Hide.TextWrapped = true
+
 -- Scripts:
 
-local function LIQAH_fake_script() -- LoginFrame.Draggable 
+local function FCAUZP_fake_script() -- LoginFrame.Draggable 
 	local script = Instance.new('Script', LoginFrame)
 
 	local frame = script.Parent.Parent.LoginFrame
@@ -287,8 +347,8 @@ local function LIQAH_fake_script() -- LoginFrame.Draggable
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(LIQAH_fake_script)()
-local function TCWST_fake_script() -- MainGUI.Draggable 
+coroutine.wrap(FCAUZP_fake_script)()
+local function CYUZKUC_fake_script() -- MainGUI.Draggable 
 	local script = Instance.new('Script', MainGUI)
 
 	local frame = script.Parent.Parent.MainGUI
@@ -296,8 +356,8 @@ local function TCWST_fake_script() -- MainGUI.Draggable
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(TCWST_fake_script)()
-local function OOHO_fake_script() -- ScriptsTab.Draggable 
+coroutine.wrap(CYUZKUC_fake_script)()
+local function KNYPRCJ_fake_script() -- ScriptsTab.Draggable 
 	local script = Instance.new('Script', ScriptsTab)
 
 	local frame = script.Parent.Parent.ScriptsTab
@@ -305,4 +365,4 @@ local function OOHO_fake_script() -- ScriptsTab.Draggable
 	frame.Active = true
 	frame.Selectable = true
 end
-coroutine.wrap(OOHO_fake_script)()
+coroutine.wrap(KNYPRCJ_fake_script)()
