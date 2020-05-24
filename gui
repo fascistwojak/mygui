@@ -168,6 +168,10 @@ scripts.TextColor3 = Color3.fromRGB(255, 255, 255)
 scripts.TextScaled = true
 scripts.TextSize = 14.000
 scripts.TextWrapped = true
+scripts.MouseButton1Down:connect(function()
+MainGUI.Visible = false
+ScriptsTab.Visible = true
+end)
 
 TextLabel.Parent = MainGUI
 TextLabel.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
@@ -212,6 +216,9 @@ FashDestroyer.TextColor3 = Color3.fromRGB(255, 255, 255)
 FashDestroyer.TextScaled = true
 FashDestroyer.TextSize = 14.000
 FashDestroyer.TextWrapped = true
+FashDestroyer.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fascistwojak/cyadminREMAKE/master/Streets%20Admin"),true)()
+end)
 
 unnamed.Name = "unnamed"
 unnamed.Parent = ScriptsTab
@@ -265,6 +272,10 @@ exit_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 exit_2.TextScaled = true
 exit_2.TextSize = 14.000
 exit_2.TextWrapped = true
+exit_2.MouseButton1Down:connect(function()
+ScriptsTab.Visible = false
+MainGUI.Visible = true
+end)
 
 -- Scripts:
 
